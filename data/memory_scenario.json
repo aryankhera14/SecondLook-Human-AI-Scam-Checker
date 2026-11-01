@@ -1,0 +1,29 @@
+{
+  "description": "Fifteen days of messages for one simulated user, built to test WHEN memory should be forgotten (professor's feedback). Order 1 (Ninja Van) ends early with a 'delivered' message (an ending event); order 2 (J&T) arrives silently on day 8 (only a re-check can catch it). Each fake cash-on-delivery text comes from the SAME courier as the remembered order and arrives while a 5-day memory of 'expecting a parcel' is still unexpired, so only staleness decides the outcome. 'completes' marks the situation that genuinely ends at that message; the simulated user uses it to answer 'forget this?' offers. Revised after the first live run: the 'delivered' message now has the user still expecting that parcel, and couriers are consistent within each order.",
+  "sessions": [
+    {"day": 0, "id": "M1", "label": "legit", "context": {"expecting_delivery": true},
+     "text": "Ninja Van: Your COD parcel (SGD 48.90) will arrive on Wed between 2-6pm. Please prepare exact cash for the driver.",
+     "note": "Order 1 announced. User says yes; SecondLook offers to remember."},
+    {"day": 1, "id": "M2", "label": "legit", "context": {"expecting_delivery": true},
+     "text": "Ninja Van: Your COD parcel (SGD 48.90) is out for delivery today. Please prepare exact cash for the driver.",
+     "note": "Memory is fresh, so no question is needed."},
+    {"day": 2, "id": "M3", "label": "legit", "context": {"expecting_delivery": true}, "completes": ["expecting_delivery"],
+     "text": "Ninja Van: Your parcel has been delivered. Thank you for choosing Ninja Van.",
+     "note": "Order 1 arrives - an ending event. Genuine and asks for nothing."},
+    {"day": 4, "id": "M4", "label": "scam", "context": {"expecting_delivery": false},
+     "text": "Ninja Van: Your COD parcel (SGD 63.40) will arrive today between 2-6pm. Please prepare exact cash for the driver.",
+     "note": "Fake COD from the same courier inside the 5-day window. Fixed expiry still trusts 'expecting a parcel'."},
+    {"day": 6, "id": "M5", "label": "legit", "context": {"expecting_delivery": true},
+     "text": "J&T Express: Your COD parcel (SGD 22.00) will arrive on Sat. Please prepare exact cash for the driver.",
+     "note": "Order 2 announced."},
+    {"day": 7, "id": "M6", "label": "legit", "context": {"expecting_delivery": true},
+     "text": "J&T Express: Your COD parcel (SGD 22.00) is out for delivery today. Please prepare exact cash for the driver.",
+     "note": "Memory is fresh."},
+    {"day": 10, "id": "M7", "label": "scam", "context": {"expecting_delivery": false},
+     "text": "J&T Express: Your COD parcel (SGD 39.90) will arrive today. Please prepare exact cash for the driver.",
+     "note": "Order 2 arrived silently on day 8. Fake COD from the same courier inside the window: only a re-check can catch it."},
+    {"day": 14, "id": "M8", "label": "scam", "context": {"applied_for_job": false},
+     "text": "Hi, this is Jess from the recruitment team at Grab. We received your application for the Operations Intern role. Are you free for a 15-min call tomorrow at 3pm?",
+     "note": "Unrelated type: delivery memory must not leak into job messages."}
+  ]
+}

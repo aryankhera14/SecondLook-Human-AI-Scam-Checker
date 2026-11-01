@@ -1,0 +1,50 @@
+{
+  "description": "Eight messages for the think-aloud study, split into two sets of four for counterbalancing (human alone vs with SecondLook). Each set contains one deliberately wrong verdict, so every participant meets exactly one planted error in their with-SecondLook half. Planted verdicts are shown as-is (no code guardrails) to measure over-reliance.",
+  "context_card_for_participant": "Imagine you are a university student. Last week you ordered a jacket on Shopee and already paid for it online; you are not expecting any other parcel. You applied for two internships last month, at a bank and at a consulting firm (not at Grab). You are selling an old camera on Carousell. You have a dental appointment at Smile Dental next week. You bank with DBS.",
+  "set_A": [
+    "CD06b",
+    "CF03",
+    "L03",
+    "S03"
+  ],
+  "set_B": [
+    "CF01",
+    "CD04b",
+    "L07",
+    "S01"
+  ],
+  "planted_wrong_verdicts": [
+    {
+      "message_id": "CD06b",
+      "verdict": {
+        "message_type": "delivery",
+        "risky_requests": [
+          "pay_money"
+        ],
+        "tier": "looks_fine",
+        "summary": "This looks like a normal cash-on-delivery notice from a courier. No links or codes are requested.",
+        "red_flags": [],
+        "safe_next_step": "Prepare the cash for the driver.",
+        "context_used": [],
+        "memory_suggestions": []
+      },
+      "why_wrong": "The participant's card says their only order was already paid online, so an unexpected cash-on-delivery parcel is a known e-commerce scam."
+    },
+    {
+      "message_id": "CD04b",
+      "verdict": {
+        "message_type": "job",
+        "risky_requests": [
+          "reply_with_details"
+        ],
+        "tier": "looks_fine",
+        "summary": "This looks like a normal recruiter follow-up. No links, payments or codes are requested.",
+        "red_flags": [],
+        "safe_next_step": "You can reply to arrange the call.",
+        "context_used": [],
+        "memory_suggestions": []
+      },
+      "why_wrong": "The participant's card says they never applied to Grab, so an unsolicited recruiter message is a known job-scam opener."
+    }
+  ]
+}

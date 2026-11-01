@@ -1,0 +1,11 @@
+﻿subset,condition,messages,scams,genuine,missed_scams,unsafe_outcomes,false_alarms,friction,questions_total,questions_per_msg,messages_with_a_question,mean_outcome_score,mean_tokens_per_check,verdicts_changed_by_code_rules,answers_recovered_from_malformed_tool_call
+all,clarification,40,20,20,1,1,2,0,14,0.35,14,0.925,4211,4,2
+all,no_clarification,40,20,20,8,1,2,1,0,0.0,0,0.85,3395,1,5
+context_dependent,clarification,16,8,8,1,1,0,0,10,0.62,10,0.938,4896,2,2
+context_dependent,no_clarification,16,8,8,8,1,0,0,0,0.0,0,0.719,3587,0,2
+context_fits_scam,clarification,6,6,0,0,0,0,0,1,0.17,1,1.0,4547,0,0
+context_fits_scam,no_clarification,6,6,0,0,0,0,0,0,0.0,0,1.0,3981,0,0
+clear_scam,clarification,6,6,0,0,0,0,0,1,0.17,1,1.0,4291,0,0
+clear_scam,no_clarification,6,6,0,0,0,0,0,0,0.0,0,1.0,3996,0,0
+clear_legit,clarification,12,0,12,0,0,2,0,2,0.17,2,0.833,3088,2,0
+clear_legit,no_clarification,12,0,12,0,0,2,1,0,0.0,0,0.875,2548,1,3

@@ -1,0 +1,168 @@
+[
+  {
+    "why": "1. clarification corrected the verdict",
+    "id": "CD01b",
+    "label": "scam",
+    "category": "context_dependent",
+    "asked_in_A": true,
+    "A_questions": [
+      "Did you recently make a SGD 1,240.00 card payment to Shopee SG? -> No"
+    ],
+    "A_verdict": "likely_scam",
+    "A_raw": "likely_scam",
+    "B_verdict": "verify_safe_route",
+    "B_raw": "verify_safe_route",
+    "A_adjustments": [],
+    "B_adjustments": [],
+    "A_summary": "You received an OTP for a card payment you did not make. The message asks you not to share the OTP, but it is unsolicited and likely a phishing attempt.",
+    "B_summary": "The message claims to be an OTP for a card payment and asks you not to share it, but it could be a phishing attempt."
+  },
+  {
+    "why": "1. clarification corrected the verdict",
+    "id": "CD02b",
+    "label": "scam",
+    "category": "context_dependent",
+    "asked_in_A": true,
+    "A_questions": [
+      "Did you recently try to log in to Telegram or request a verification code? -> No"
+    ],
+    "A_verdict": "likely_scam",
+    "A_raw": "likely_scam",
+    "B_verdict": "verify_safe_route",
+    "B_raw": "verify_safe_route",
+    "A_adjustments": [],
+    "B_adjustments": [],
+    "A_summary": "You received an unsolicited Telegram verification code and were told not to share it.",
+    "B_summary": "The SMS contains a Telegram verification code and warns not to share it, but it was unsolicited."
+  },
+  {
+    "why": "1. clarification corrected the verdict",
+    "id": "CD03b",
+    "label": "scam",
+    "category": "context_dependent",
+    "asked_in_A": true,
+    "A_questions": [
+      "Did you log in to Singpass on a new device at the time mentioned? -> No"
+    ],
+    "A_verdict": "likely_scam",
+    "A_raw": "likely_scam",
+    "B_verdict": "verify_safe_route",
+    "B_raw": "verify_safe_route",
+    "A_adjustments": [],
+    "B_adjustments": [],
+    "A_summary": "You received an unexpected Singpass login alert for a device you did not use.",
+    "B_summary": "The message warns of a login from a new device and asks you to reset your password in the Singpass app if it wasn't you."
+  },
+  {
+    "why": "1. clarification corrected the verdict",
+    "id": "CD05b",
+    "label": "scam",
+    "category": "context_dependent",
+    "asked_in_A": true,
+    "A_questions": [
+      "Did you apply for a Part-time Data Entry Assistant role with Kelly Services? -> No"
+    ],
+    "A_verdict": "likely_scam",
+    "A_raw": "likely_scam",
+    "B_verdict": "verify_safe_route",
+    "B_raw": "verify_safe_route",
+    "A_adjustments": [],
+    "B_adjustments": [],
+    "A_summary": "You received an email asking you to reply with interview slot details for a job you did not apply for.",
+    "B_summary": "The email asks you to reply with your preferred interview slot for a part‑time data entry role."
+  },
+  {
+    "why": "1. clarification corrected the verdict",
+    "id": "CD07b",
+    "label": "scam",
+    "category": "context_dependent",
+    "asked_in_A": true,
+    "A_questions": [
+      "Did you transfer SGD 2,000.00 to TAN K M on 03 Oct at 21:14 using your OCBC account? -> No"
+    ],
+    "A_verdict": "likely_scam",
+    "A_raw": "likely_scam",
+    "B_verdict": "verify_safe_route",
+    "B_raw": "verify_safe_route",
+    "A_adjustments": [],
+    "B_adjustments": [
+      "Replaced the suggested next step because it used the message's own link or number."
+    ],
+    "A_summary": "The SMS claims you transferred money you did not make and urges you to call a number on your card, which is a common phishing tactic.",
+    "B_summary": "The SMS claims a transfer of SGD 2,000 to a recipient and asks you to call a number on your card if you did not make it."
+  },
+  {
+    "why": "1. clarification corrected the verdict",
+    "id": "CD08b",
+    "label": "scam",
+    "category": "context_dependent",
+    "asked_in_A": true,
+    "A_questions": [
+      "Do you know Wei Ming and were expecting a message about a new phone number from them? -> No"
+    ],
+    "A_verdict": "likely_scam",
+    "A_raw": "likely_scam",
+    "B_verdict": "looks_fine",
+    "B_raw": "looks_fine",
+    "A_adjustments": [],
+    "B_adjustments": [],
+    "A_summary": "Someone claiming to be Wei Ming says this is a new number and asks you to save it, but you do not know this person.",
+    "B_summary": "A contact says they have a new phone number and asks you to save it."
+  },
+  {
+    "why": "2. did not ask although context decides the verdict",
+    "id": "CD04b",
+    "label": "scam",
+    "category": "context_dependent",
+    "asked_in_A": false,
+    "A_questions": [],
+    "A_verdict": "looks_fine",
+    "A_raw": "looks_fine",
+    "B_verdict": "verify_safe_route",
+    "B_raw": "verify_safe_route",
+    "A_adjustments": [],
+    "B_adjustments": [],
+    "A_summary": "A recruiter from Grab is asking to schedule a short interview call for an Operations Intern application.",
+    "B_summary": "A recruiter from Grab asks for a short phone interview."
+  },
+  {
+    "why": "3. asking made the verdict worse",
+    "id": "L07",
+    "label": "legit",
+    "category": "clear_legit",
+    "asked_in_A": true,
+    "A_questions": [
+      "Do you have a dental appointment scheduled with Smile Dental on 8 Oct? -> Not sure"
+    ],
+    "A_verdict": "likely_scam",
+    "A_raw": "likely_scam",
+    "B_verdict": "verify_safe_route",
+    "B_raw": "verify_safe_route",
+    "A_adjustments": [],
+    "B_adjustments": [],
+    "A_summary": "The message asks you to call a number to reschedule an appointment you are not sure you have, which is a common scam tactic.",
+    "B_summary": "The SMS claims to be a dental appointment reminder and asks you to call a number to reschedule."
+  },
+  {
+    "why": "3. asking made the verdict worse",
+    "id": "L08",
+    "label": "legit",
+    "category": "clear_legit",
+    "asked_in_A": true,
+    "A_questions": [
+      "Did you borrow the book \"Thinking, Fast and Slow\" from the National Library Board and have a loan due soon? -> Not sure"
+    ],
+    "A_verdict": "likely_scam",
+    "A_raw": "likely_scam",
+    "B_verdict": "verify_safe_route",
+    "B_raw": "verify_safe_route",
+    "A_adjustments": [
+      "Replaced the suggested next step because it used the message's own link or number."
+    ],
+    "B_adjustments": [
+      "Replaced the suggested next step because it used the message's own link or number."
+    ],
+    "A_summary": "The message claims a library loan is due and asks you to renew via a link, but you are not sure you have such a loan.",
+    "B_summary": "The message claims a library loan is due and asks you to renew via a website link."
+  }
+]

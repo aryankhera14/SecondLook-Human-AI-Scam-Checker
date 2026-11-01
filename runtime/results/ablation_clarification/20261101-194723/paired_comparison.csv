@@ -1,0 +1,41 @@
+﻿id,label,category,topic,A_tier,B_tier,A_score,B_score,change_with_clarification,A_asked,A_questions,A_code_rule_changed,B_code_rule_changed,A_raw_tier,B_raw_tier
+CD01a,legit,context_dependent,phishing,looks_fine,verify_safe_route,1.0,1.0,unchanged,0,,False,False,looks_fine,verify_safe_route
+CD01b,scam,context_dependent,phishing,likely_scam,verify_safe_route,1.0,0.5,improved,1,initiated_payment_or_refund=No,False,False,likely_scam,verify_safe_route
+CD02a,legit,context_dependent,phishing,verify_safe_route,verify_safe_route,1.0,1.0,unchanged,0,,False,False,verify_safe_route,verify_safe_route
+CD02b,scam,context_dependent,phishing,likely_scam,verify_safe_route,1.0,0.5,improved,1,requested_otp_or_login=No,False,False,likely_scam,verify_safe_route
+CD03a,legit,context_dependent,phishing,looks_fine,verify_safe_route,1.0,1.0,unchanged,1,requested_otp_or_login=Yes,False,False,looks_fine,verify_safe_route
+CD03b,scam,context_dependent,phishing,likely_scam,verify_safe_route,1.0,0.5,improved,1,requested_otp_or_login=No,False,False,likely_scam,verify_safe_route
+CD04a,legit,context_dependent,job,looks_fine,verify_safe_route,1.0,1.0,unchanged,0,,False,False,looks_fine,verify_safe_route
+CD04b,scam,context_dependent,job,looks_fine,verify_safe_route,0.0,0.5,worsened,0,,False,False,looks_fine,verify_safe_route
+CD05a,legit,context_dependent,job,verify_safe_route,verify_safe_route,1.0,1.0,unchanged,1,applied_for_job=Yes,True,False,looks_fine,verify_safe_route
+CD05b,scam,context_dependent,job,likely_scam,verify_safe_route,1.0,0.5,improved,1,applied_for_job=No,False,False,likely_scam,verify_safe_route
+CD06a,legit,context_dependent,delivery_ecommerce,verify_safe_route,verify_safe_route,1.0,1.0,unchanged,1,expecting_delivery=Yes,True,False,looks_fine,verify_safe_route
+CD06b,scam,context_dependent,delivery_ecommerce,likely_scam,verify_safe_route,1.0,0.5,improved,0,,False,False,likely_scam,verify_safe_route
+CD07a,legit,context_dependent,phishing,verify_safe_route,verify_safe_route,1.0,1.0,unchanged,1,initiated_payment_or_refund=Yes,False,False,verify_safe_route,verify_safe_route
+CD07b,scam,context_dependent,phishing,likely_scam,verify_safe_route,1.0,0.5,improved,1,initiated_payment_or_refund=No,False,False,likely_scam,verify_safe_route
+CD08a,legit,context_dependent,out_of_scope,looks_fine,looks_fine,1.0,1.0,unchanged,0,,False,False,looks_fine,looks_fine
+CD08b,scam,context_dependent,out_of_scope,likely_scam,looks_fine,1.0,0.0,improved,1,knows_sender_personally=No,False,False,likely_scam,looks_fine
+CF01,scam,context_fits_scam,delivery_ecommerce,likely_scam,likely_scam,1.0,1.0,unchanged,0,,False,False,likely_scam,likely_scam
+CF02,scam,context_fits_scam,delivery_ecommerce,likely_scam,likely_scam,1.0,1.0,unchanged,0,,False,False,likely_scam,likely_scam
+CF03,scam,context_fits_scam,delivery_ecommerce,likely_scam,likely_scam,1.0,1.0,unchanged,0,,False,False,likely_scam,likely_scam
+CF04,scam,context_fits_scam,job,likely_scam,likely_scam,1.0,1.0,unchanged,0,,False,False,likely_scam,likely_scam
+CF05,scam,context_fits_scam,phishing,likely_scam,likely_scam,1.0,1.0,unchanged,0,,False,False,likely_scam,likely_scam
+CF06,scam,context_fits_scam,phishing,likely_scam,likely_scam,1.0,1.0,unchanged,1,requested_otp_or_login=Yes,False,False,likely_scam,likely_scam
+S01,scam,clear_scam,phishing,likely_scam,likely_scam,1.0,1.0,unchanged,0,,False,False,likely_scam,likely_scam
+S02,scam,clear_scam,out_of_scope,likely_scam,likely_scam,1.0,1.0,unchanged,0,,False,False,likely_scam,likely_scam
+S03,scam,clear_scam,phishing,likely_scam,likely_scam,1.0,1.0,unchanged,1,requested_otp_or_login=Not sure,False,False,likely_scam,likely_scam
+S04,scam,clear_scam,phishing,likely_scam,likely_scam,1.0,1.0,unchanged,0,,False,False,likely_scam,likely_scam
+S05,scam,clear_scam,out_of_scope,likely_scam,likely_scam,1.0,1.0,unchanged,0,,False,False,likely_scam,likely_scam
+S06,scam,clear_scam,phishing,likely_scam,likely_scam,1.0,1.0,unchanged,0,,False,False,likely_scam,likely_scam
+L01,legit,clear_legit,everyday,verify_safe_route,cant_tell,1.0,0.25,improved,0,,True,False,looks_fine,cant_tell
+L02,legit,clear_legit,everyday,looks_fine,looks_fine,1.0,1.0,unchanged,0,,False,False,looks_fine,looks_fine
+L03,legit,clear_legit,delivery_ecommerce,looks_fine,looks_fine,1.0,1.0,unchanged,0,,False,False,looks_fine,looks_fine
+L04,legit,clear_legit,everyday,looks_fine,looks_fine,1.0,1.0,unchanged,0,,False,False,looks_fine,looks_fine
+L05,legit,clear_legit,phishing,looks_fine,verify_safe_route,1.0,1.0,unchanged,0,,False,False,looks_fine,verify_safe_route
+L06,legit,clear_legit,phishing,looks_fine,cant_tell,1.0,0.25,improved,0,,False,False,looks_fine,cant_tell
+L07,legit,clear_legit,everyday,likely_scam,verify_safe_route,0.0,1.0,worsened,1,has_account_with_named_org=Not sure,False,False,likely_scam,verify_safe_route
+L08,legit,clear_legit,everyday,likely_scam,verify_safe_route,0.0,1.0,worsened,1,expecting_delivery=Not sure,False,False,likely_scam,verify_safe_route
+L09,legit,clear_legit,everyday,looks_fine,looks_fine,1.0,1.0,unchanged,0,,False,False,looks_fine,looks_fine
+L10,legit,clear_legit,phishing,looks_fine,looks_fine,1.0,1.0,unchanged,0,,False,False,looks_fine,looks_fine
+L11,legit,clear_legit,everyday,looks_fine,looks_fine,1.0,1.0,unchanged,0,,False,False,looks_fine,looks_fine
+L12,legit,clear_legit,everyday,verify_safe_route,verify_safe_route,1.0,1.0,unchanged,0,,True,True,looks_fine,looks_fine

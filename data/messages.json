@@ -1,0 +1,550 @@
+[
+  {
+    "id": "CD01a",
+    "text": "DBS: OTP 482913 is for your SGD 1,240.00 card payment to SHOPEE SG. Never share this OTP with anyone.",
+    "channel": "SMS",
+    "sender": "DBS",
+    "label": "legit",
+    "category": "context_dependent",
+    "context": {
+      "requested_otp_or_login": true,
+      "initiated_payment_or_refund": true
+    },
+    "pair_id": "otp_payment",
+    "note": "Genuine only if the user is making this payment; otherwise someone is using their card.",
+    "topic": "phishing"
+  },
+  {
+    "id": "CD01b",
+    "text": "DBS: OTP 482913 is for your SGD 1,240.00 card payment to SHOPEE SG. Never share this OTP with anyone.",
+    "channel": "SMS",
+    "sender": "DBS",
+    "label": "scam",
+    "category": "context_dependent",
+    "context": {
+      "requested_otp_or_login": false,
+      "initiated_payment_or_refund": false
+    },
+    "pair_id": "otp_payment",
+    "note": "Genuine only if the user is making this payment; otherwise someone is using their card.",
+    "topic": "phishing"
+  },
+  {
+    "id": "CD02a",
+    "text": "Telegram code: 55123. Do not give this code to anyone, even if they say they are from Telegram!",
+    "channel": "SMS",
+    "sender": "Telegram",
+    "label": "legit",
+    "category": "context_dependent",
+    "context": {
+      "requested_otp_or_login": true
+    },
+    "pair_id": "app_code",
+    "note": "Unrequested login code = account takeover attempt.",
+    "topic": "phishing"
+  },
+  {
+    "id": "CD02b",
+    "text": "Telegram code: 55123. Do not give this code to anyone, even if they say they are from Telegram!",
+    "channel": "SMS",
+    "sender": "Telegram",
+    "label": "scam",
+    "category": "context_dependent",
+    "context": {
+      "requested_otp_or_login": false
+    },
+    "pair_id": "app_code",
+    "note": "Unrequested login code = account takeover attempt.",
+    "topic": "phishing"
+  },
+  {
+    "id": "CD03a",
+    "text": "Singpass: You logged in to Singpass on a new device (iPhone) at 10:42pm on 03 Oct. If this was not you, reset your password in the Singpass app.",
+    "channel": "SMS",
+    "sender": "gov.sg",
+    "label": "legit",
+    "category": "context_dependent",
+    "context": {
+      "requested_otp_or_login": true
+    },
+    "pair_id": "singpass_login",
+    "note": "Genuine alert either way, but if not the user, the account is compromised.",
+    "topic": "phishing"
+  },
+  {
+    "id": "CD03b",
+    "text": "Singpass: You logged in to Singpass on a new device (iPhone) at 10:42pm on 03 Oct. If this was not you, reset your password in the Singpass app.",
+    "channel": "SMS",
+    "sender": "gov.sg",
+    "label": "scam",
+    "category": "context_dependent",
+    "context": {
+      "requested_otp_or_login": false
+    },
+    "pair_id": "singpass_login",
+    "note": "Genuine alert either way, but if not the user, the account is compromised.",
+    "topic": "phishing"
+  },
+  {
+    "id": "CD04a",
+    "text": "Hi, this is Jess from the recruitment team at Grab. We received your application for the Operations Intern role. Are you free for a 15-min call tomorrow at 3pm?",
+    "channel": "WhatsApp",
+    "sender": "+65 8123 4471",
+    "label": "legit",
+    "category": "context_dependent",
+    "context": {
+      "applied_for_job": true
+    },
+    "pair_id": "recruiter_call",
+    "note": "Unsolicited recruiter contact is a common job-scam opener.",
+    "topic": "job"
+  },
+  {
+    "id": "CD04b",
+    "text": "Hi, this is Jess from the recruitment team at Grab. We received your application for the Operations Intern role. Are you free for a 15-min call tomorrow at 3pm?",
+    "channel": "WhatsApp",
+    "sender": "+65 8123 4471",
+    "label": "scam",
+    "category": "context_dependent",
+    "context": {
+      "applied_for_job": false
+    },
+    "pair_id": "recruiter_call",
+    "note": "Unsolicited recruiter contact is a common job-scam opener.",
+    "topic": "job"
+  },
+  {
+    "id": "CD05a",
+    "text": "Thank you for applying for the Part-time Data Entry Assistant role. Please reply with your preferred interview slot this week (Mon-Fri, 10am-5pm).",
+    "channel": "Email",
+    "sender": "careers@kellyservices.sg",
+    "label": "legit",
+    "category": "context_dependent",
+    "context": {
+      "applied_for_job": true
+    },
+    "pair_id": "interview_slot",
+    "note": "Only genuine if the user applied.",
+    "topic": "job"
+  },
+  {
+    "id": "CD05b",
+    "text": "Thank you for applying for the Part-time Data Entry Assistant role. Please reply with your preferred interview slot this week (Mon-Fri, 10am-5pm).",
+    "channel": "Email",
+    "sender": "careers@kellyservices.sg",
+    "label": "scam",
+    "category": "context_dependent",
+    "context": {
+      "applied_for_job": false
+    },
+    "pair_id": "interview_slot",
+    "note": "Only genuine if the user applied.",
+    "topic": "job"
+  },
+  {
+    "id": "CD06a",
+    "text": "Ninja Van: Your COD parcel (SGD 48.90) will arrive today between 2-6pm. Please prepare exact cash for the driver.",
+    "channel": "SMS",
+    "sender": "+65 9022 5813",
+    "label": "legit",
+    "category": "context_dependent",
+    "context": {
+      "expecting_delivery": true
+    },
+    "pair_id": "cod_delivery",
+    "note": "Unordered cash-on-delivery parcels are a known e-commerce scam.",
+    "topic": "delivery_ecommerce"
+  },
+  {
+    "id": "CD06b",
+    "text": "Ninja Van: Your COD parcel (SGD 48.90) will arrive today between 2-6pm. Please prepare exact cash for the driver.",
+    "channel": "SMS",
+    "sender": "+65 9022 5813",
+    "label": "scam",
+    "category": "context_dependent",
+    "context": {
+      "expecting_delivery": false
+    },
+    "pair_id": "cod_delivery",
+    "note": "Unordered cash-on-delivery parcels are a known e-commerce scam.",
+    "topic": "delivery_ecommerce"
+  },
+  {
+    "id": "CD07a",
+    "text": "OCBC: You have transferred SGD 2,000.00 to TAN K M on 03 Oct 21:14. If you did not make this transfer, call the number on the back of your card.",
+    "channel": "SMS",
+    "sender": "OCBC",
+    "label": "legit",
+    "category": "context_dependent",
+    "context": {
+      "initiated_payment_or_refund": true,
+      "requested_otp_or_login": true
+    },
+    "pair_id": "transfer_alert",
+    "note": "If not initiated by the user, it is fraud in progress.",
+    "topic": "phishing"
+  },
+  {
+    "id": "CD07b",
+    "text": "OCBC: You have transferred SGD 2,000.00 to TAN K M on 03 Oct 21:14. If you did not make this transfer, call the number on the back of your card.",
+    "channel": "SMS",
+    "sender": "OCBC",
+    "label": "scam",
+    "category": "context_dependent",
+    "context": {
+      "initiated_payment_or_refund": false,
+      "requested_otp_or_login": false
+    },
+    "pair_id": "transfer_alert",
+    "note": "If not initiated by the user, it is fraud in progress.",
+    "topic": "phishing"
+  },
+  {
+    "id": "CD08a",
+    "text": "Hey it's Wei Ming, this is my new number. Save it ya!",
+    "channel": "WhatsApp",
+    "sender": "+65 8890 1123",
+    "label": "legit",
+    "category": "context_dependent",
+    "context": {
+      "knows_sender_personally": true
+    },
+    "pair_id": "new_number",
+    "note": "Genuine only if the user knows this person changed number; impersonation opener otherwise.",
+    "topic": "out_of_scope"
+  },
+  {
+    "id": "CD08b",
+    "text": "Hey it's Wei Ming, this is my new number. Save it ya!",
+    "channel": "WhatsApp",
+    "sender": "+65 8890 1123",
+    "label": "scam",
+    "category": "context_dependent",
+    "context": {
+      "knows_sender_personally": false
+    },
+    "pair_id": "new_number",
+    "note": "Genuine only if the user knows this person changed number; impersonation opener otherwise.",
+    "topic": "out_of_scope"
+  },
+  {
+    "id": "CF01",
+    "text": "SingPost: We could not deliver your parcel due to an incomplete address. Update your details within 24h: singpost-redeliver.com/sg",
+    "channel": "SMS",
+    "sender": "+65 8231 0094",
+    "label": "scam",
+    "category": "context_fits_scam",
+    "context": {
+      "expecting_delivery": true
+    },
+    "pair_id": null,
+    "note": "",
+    "topic": "delivery_ecommerce"
+  },
+  {
+    "id": "CF02",
+    "text": "Customs: Your parcel is held pending a SGD 2.80 customs fee. Pay now to avoid return: sg-parcel-fee.top/pay",
+    "channel": "SMS",
+    "sender": "+60 11-2384 9921",
+    "label": "scam",
+    "category": "context_fits_scam",
+    "context": {
+      "expecting_delivery": true
+    },
+    "pair_id": null,
+    "note": "",
+    "topic": "delivery_ecommerce"
+  },
+  {
+    "id": "CF03",
+    "text": "Hi! I want to buy your camera. I have paid via Carousell Protection. Click to receive your payment: carousell-payout.co/claim",
+    "channel": "WhatsApp",
+    "sender": "+65 8012 7733",
+    "label": "scam",
+    "category": "context_fits_scam",
+    "context": {
+      "made_listing_selling_item": true
+    },
+    "pair_id": null,
+    "note": "",
+    "topic": "delivery_ecommerce"
+  },
+  {
+    "id": "CF04",
+    "text": "Congrats! You are shortlisted for the remote job. Earn $300/day liking posts. Pay a $50 refundable deposit to start today.",
+    "channel": "Telegram",
+    "sender": "@hr_rina_sg",
+    "label": "scam",
+    "category": "context_fits_scam",
+    "context": {
+      "applied_for_job": true
+    },
+    "pair_id": null,
+    "note": "",
+    "topic": "job"
+  },
+  {
+    "id": "CF05",
+    "text": "Shopee: Your refund of $35.90 failed. Log in here to re-submit your bank details: shopee-refund-sg.com",
+    "channel": "SMS",
+    "sender": "+65 9301 2268",
+    "label": "scam",
+    "category": "context_fits_scam",
+    "context": {
+      "initiated_payment_or_refund": true
+    },
+    "pair_id": null,
+    "note": "",
+    "topic": "phishing"
+  },
+  {
+    "id": "CF06",
+    "text": "DBS: Your OTP is 771204. A DBS officer will call you to verify it. Please share the OTP when asked.",
+    "channel": "SMS",
+    "sender": "+65 8412 5567",
+    "label": "scam",
+    "category": "context_fits_scam",
+    "context": {
+      "requested_otp_or_login": true
+    },
+    "pair_id": null,
+    "note": "",
+    "topic": "phishing"
+  },
+  {
+    "id": "S01",
+    "text": "DBS: Your account has been locked due to suspicious activity. Verify immediately at dbs-secure-login.com to avoid suspension.",
+    "channel": "SMS",
+    "sender": "+65 8723 1190",
+    "label": "scam",
+    "category": "clear_scam",
+    "context": {
+      "has_account_with_named_org": true
+    },
+    "pair_id": null,
+    "note": "",
+    "topic": "phishing"
+  },
+  {
+    "id": "S02",
+    "text": "This is an officer from the Ministry of Health. Your NRIC was used in a money laundering case. You must transfer your savings to a safe account for investigation.",
+    "channel": "Phone/WhatsApp",
+    "sender": "+65 6123 0000",
+    "label": "scam",
+    "category": "clear_scam",
+    "context": {},
+    "pair_id": null,
+    "note": "",
+    "topic": "out_of_scope"
+  },
+  {
+    "id": "S03",
+    "text": "Hi, I accidentally sent my OTP code to your number. Can you forward it to me? Very urgent pls",
+    "channel": "WhatsApp",
+    "sender": "+65 9112 4408",
+    "label": "scam",
+    "category": "clear_scam",
+    "context": {
+      "knows_sender_personally": false
+    },
+    "pair_id": null,
+    "note": "",
+    "topic": "phishing"
+  },
+  {
+    "id": "S04",
+    "text": "IRAS: You are eligible for a tax refund of $612.40. Claim within 48 hours: iras-refund.gov-sg.co",
+    "channel": "SMS",
+    "sender": "+65 8890 2276",
+    "label": "scam",
+    "category": "clear_scam",
+    "context": {},
+    "pair_id": null,
+    "note": "",
+    "topic": "phishing"
+  },
+  {
+    "id": "S05",
+    "text": "Join our VIP stock group! Guaranteed 30% weekly returns. Limited slots, transfer to our investment manager today.",
+    "channel": "WhatsApp",
+    "sender": "+852 5123 9981",
+    "label": "scam",
+    "category": "clear_scam",
+    "context": {},
+    "pair_id": null,
+    "note": "",
+    "topic": "out_of_scope"
+  },
+  {
+    "id": "S06",
+    "text": "Netflix: Your payment failed and your membership will be suspended today. Update your card: netflix-billing-sg.com",
+    "channel": "SMS",
+    "sender": "+65 8199 0032",
+    "label": "scam",
+    "category": "clear_scam",
+    "context": {
+      "has_account_with_named_org": true
+    },
+    "pair_id": null,
+    "note": "",
+    "topic": "phishing"
+  },
+  {
+    "id": "L01",
+    "text": "Your HDB appointment is confirmed for 12 Oct, 10:00am at HDB Hub. No reply is needed.",
+    "channel": "SMS",
+    "sender": "gov.sg",
+    "label": "legit",
+    "category": "clear_legit",
+    "context": {},
+    "pair_id": null,
+    "note": "",
+    "topic": "everyday"
+  },
+  {
+    "id": "L02",
+    "text": "Dinner at 7 at the usual place? Bring the board game!",
+    "channel": "WhatsApp",
+    "sender": "Mum (saved contact)",
+    "label": "legit",
+    "category": "clear_legit",
+    "context": {
+      "knows_sender_personally": true
+    },
+    "pair_id": null,
+    "note": "",
+    "topic": "everyday"
+  },
+  {
+    "id": "L03",
+    "text": "Shopee: Your order 241003XYZ has been shipped. Track it in the Shopee app.",
+    "channel": "SMS",
+    "sender": "Shopee",
+    "label": "legit",
+    "category": "clear_legit",
+    "context": {
+      "expecting_delivery": true
+    },
+    "pair_id": null,
+    "note": "",
+    "topic": "delivery_ecommerce"
+  },
+  {
+    "id": "L04",
+    "text": "Reminder: CS619 project proposal is due tonight at 11:59pm on eLearn.",
+    "channel": "Email",
+    "sender": "course-noreply@university.edu.sg",
+    "label": "legit",
+    "category": "clear_legit",
+    "context": {},
+    "pair_id": null,
+    "note": "",
+    "topic": "everyday"
+  },
+  {
+    "id": "L05",
+    "text": "Thanks for riding with Grab. SGD 14.20 was charged to your Visa ending 1234.",
+    "channel": "Email",
+    "sender": "no-reply@grab.com",
+    "label": "legit",
+    "category": "clear_legit",
+    "context": {
+      "initiated_payment_or_refund": true
+    },
+    "pair_id": null,
+    "note": "",
+    "topic": "phishing"
+  },
+  {
+    "id": "L06",
+    "text": "You received SGD 20.00 from TAN WEI via PayNow. Note: dinner",
+    "channel": "SMS",
+    "sender": "DBS",
+    "label": "legit",
+    "category": "clear_legit",
+    "context": {
+      "knows_sender_personally": true
+    },
+    "pair_id": null,
+    "note": "",
+    "topic": "phishing"
+  },
+  {
+    "id": "L07",
+    "text": "Smile Dental: Reminder of your appointment on 8 Oct, 2:30pm. Call 6123 4567 to reschedule.",
+    "channel": "SMS",
+    "sender": "SmileDental",
+    "label": "legit",
+    "category": "clear_legit",
+    "context": {},
+    "pair_id": null,
+    "note": "",
+    "topic": "everyday"
+  },
+  {
+    "id": "L08",
+    "text": "NLB: Your loan 'Thinking, Fast and Slow' is due on 10 Oct. Renew at nlb.gov.sg or in the NLB Mobile app.",
+    "channel": "SMS",
+    "sender": "NLB",
+    "label": "legit",
+    "category": "clear_legit",
+    "context": {},
+    "pair_id": null,
+    "note": "",
+    "topic": "everyday"
+  },
+  {
+    "id": "L09",
+    "text": "Reached home already. Call me when you're free.",
+    "channel": "WhatsApp",
+    "sender": "Dad (saved contact)",
+    "label": "legit",
+    "category": "clear_legit",
+    "context": {
+      "knows_sender_personally": true
+    },
+    "pair_id": null,
+    "note": "",
+    "topic": "everyday"
+  },
+  {
+    "id": "L10",
+    "text": "Singtel: Your bill of $45.80 for Sep is ready. View it in the My Singtel app.",
+    "channel": "SMS",
+    "sender": "Singtel",
+    "label": "legit",
+    "category": "clear_legit",
+    "context": {
+      "has_account_with_named_org": true
+    },
+    "pair_id": null,
+    "note": "",
+    "topic": "phishing"
+  },
+  {
+    "id": "L11",
+    "text": "Project meeting moved to 3pm, same room. See you!",
+    "channel": "Telegram",
+    "sender": "CS619 group",
+    "label": "legit",
+    "category": "clear_legit",
+    "context": {
+      "knows_sender_personally": true
+    },
+    "pair_id": null,
+    "note": "",
+    "topic": "everyday"
+  },
+  {
+    "id": "L12",
+    "text": "UNIQLO: 20% off all outerwear this weekend in stores. Reply STOP to opt out.",
+    "channel": "SMS",
+    "sender": "UNIQLO",
+    "label": "legit",
+    "category": "clear_legit",
+    "context": {},
+    "pair_id": null,
+    "note": "",
+    "topic": "everyday"
+  }
+]

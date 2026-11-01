@@ -1,0 +1,54 @@
+# ---- Secrets: never commit ----
+.env
+.env.*
+!.env.example
+
+# ---- Python, virtual environments, caches ----
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+build/
+dist/
+
+# ---- Editors and operating systems ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+
+# ---- Local documents (the report is submitted separately) ----
+*.docx
+*.pdf
+
+# ---- Runtime state written by the app ----
+# runtime/memory.json holds whatever a user chose to remember, and runtime/study_log.csv
+# holds raw study answers. New evaluation runs (including the MOCK runs that pytest creates)
+# also land in runtime/results/. Only the archived runs listed below are committed.
+runtime/*
+!runtime/.keep
+!runtime/results/
+runtime/results/*
+!runtime/results/20261101-005051/
+!runtime/results/20261031-190901/
+!runtime/results/20261031-191411/
+!runtime/results/memory-20261101-020821.json
+!runtime/results/memory-20261031-194713.json
+!runtime/results/ablation_clarification/
+runtime/results/ablation_clarification/*
+!runtime/results/ablation_clarification/20261101-194723/
+
+# ---- Participant data from the think-aloud study ----
+# The consent form says study data is used only for the course report and deleted after
+# grading, so raw notes and per-participant decisions are not published by default.
+study/notes.txt
+study/study_log_anonymised.csv
