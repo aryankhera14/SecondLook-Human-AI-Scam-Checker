@@ -8,17 +8,18 @@ SecondLook is an LLM agent that helps a person in Singapore decide what to do ab
 
 So SecondLook splits the work. The AI does what it is good at: spotting technical red flags and grounding them in official advisories. The person contributes what only they know, but is asked only when their answer would change the verdict. Rules enforced in the application, not in the prompt, keep the advice safe when the model makes a mistake.
 
+This repository accompanies the CS619 project report and the 2-minute demonstration video, which are submitted separately. It contains the full code, the datasets, the archived evaluation results behind every number in the report, and the steps to run the app and reproduce the experiments yourself.
+
 ## Contents
 
 1. [Three design ideas](#1-three-design-ideas)
 2. [System architecture](#2-system-architecture)
-3. [Application screenshots](#3-application-screenshots)
-4. [Installation and setup](#4-installation-and-setup)
-5. [Evaluation](#5-evaluation)
-6. [Key findings](#6-key-findings)
-7. [Limitations and future work](#7-limitations-and-future-work)
-8. [Repository structure](#8-repository-structure)
-9. [Reproducibility](#9-reproducibility)
+3. [Installation and setup](#3-installation-and-setup)
+4. [Evaluation](#4-evaluation)
+5. [Key findings](#5-key-findings)
+6. [Limitations and future work](#6-limitations-and-future-work)
+7. [Repository structure](#7-repository-structure)
+8. [Reproducibility](#8-reproducibility)
 
 ---
 
@@ -91,21 +92,7 @@ The model is `openai/gpt-oss-120b` served by Groq, called through a tool-calling
 
 ---
 
-## 3. Application screenshots
-
-> **Screenshots to be added.** They will be captured from the running app with a live model (not mock mode) and saved in `docs/screenshots/`. See [`docs/screenshots/README.md`](docs/screenshots/README.md) for the exact list.
-
-| Screen | File |
-|---|---|
-| Message submission | `docs/screenshots/1-submit.png` |
-| Contextual clarification (question card) | `docs/screenshots/2-question.png` |
-| Evidence-backed verdict with highlighted red flags | `docs/screenshots/3-verdict.png` |
-| Safe next step | `docs/screenshots/4-next-step.png` |
-| Memory consent or forgetting | `docs/screenshots/5-memory.png` |
-
----
-
-## 4. Installation and setup
+## 3. Installation and setup
 
 You need **Python 3.11 or newer** (the project was developed and tested on Python 3.13) and, for live results, a **Groq API key** (the free tier works). Without a key the app still runs, in a clearly labelled mock mode that uses a rule-based stand-in model.
 
@@ -153,7 +140,7 @@ A yellow **MOCK MODE** banner means no valid key was found. Mock verdicts come f
 
 ---
 
-## 5. Evaluation
+## 4. Evaluation
 
 All benchmark messages are synthetic: written to follow scam patterns described in Singapore Police Force and ScamShield advisories. No real victims' messages were used.
 
@@ -167,7 +154,7 @@ All benchmark messages are synthetic: written to follow scam patterns described 
 - **Friction:** a harmless genuine message not called "looks fine".
 - **Outcome score:** 1 (best) to 0 (worst) per message.
 
-### 5.1 Main benchmark (Ideas 1 and 2)
+### 4.1 Main benchmark (Ideas 1 and 2)
 
 - **Question:** does SecondLook make fewer unsafe judgements than a message-only checker or an LLM that is simply allowed to ask?
 - **Data:** `data/messages.json`, 40 messages (20 scam, 20 genuine):
@@ -186,7 +173,7 @@ All benchmark messages are synthetic: written to follow scam patterns described 
 - **Code:** `eval/run_eval.py`. **Results:** `runtime/results/20261101-005051/` (`report.md`, `records.jsonl`).
 - **Reproduce:** `python -m eval.run_eval`
 
-### 5.2 Risk-tiered verdict evaluation (Idea 2)
+### 4.2 Risk-tiered verdict evaluation (Idea 2)
 
 - **Question:** does the four-tier design avoid unsafe outcomes without causing alarm fatigue?
 - **Conditions:** the *same* SecondLook judgements re-expressed three ways (`derive_policy` in `eval/metrics.py`):
@@ -195,7 +182,7 @@ All benchmark messages are synthetic: written to follow scam patterns described 
   - **tiered:** the four tiers
 - **Results:** the "Idea 2" section of `runtime/results/20261101-005051/report.md`, produced by the same run as 5.1.
 
-### 5.3 Controlled clarification ablation (Idea 1)
+### 4.3 Controlled clarification ablation (Idea 1)
 
 - **Question:** does letting SecondLook ask clarification questions reduce missed scams and unsafe reassurance, compared with the same system without clarification?
 - **Conditions:**
@@ -211,7 +198,7 @@ All benchmark messages are synthetic: written to follow scam patterns described 
   - `results.jsonl`, `analysis.json`
 - **Reproduce:** `python -m eval.ablation_clarification --seed 619`
 
-### 5.4 Adaptive memory evaluation (Idea 3)
+### 4.4 Adaptive memory evaluation (Idea 3)
 
 - **Question:** when should memory be forgotten, and does adaptive forgetting avoid errors caused by stale memory?
 - **Scenario:** `data/memory_scenario.json`, 15 days and 8 messages for one simulated person:
@@ -222,7 +209,7 @@ All benchmark messages are synthetic: written to follow scam patterns described 
 - **Code:** `eval/memory_eval.py`. **Results:** `runtime/results/memory-20261101-020821.json`.
 - **Reproduce:** `python -m eval.memory_eval`
 
-### 5.5 Think-aloud user study (Idea 2, real people)
+### 4.5 Think-aloud user study (Idea 2, real people)
 
 - **Question:** do people accept correct verdicts, and do they reject a deliberately wrong one?
 - **Design:** two student participants, within-subjects and counterbalanced. Each judged 4 messages alone and 4 with SecondLook, deciding what they would do and rating confidence 1–5.
@@ -236,7 +223,7 @@ All benchmark messages are synthetic: written to follow scam patterns described 
 
 ---
 
-## 6. Key findings
+## 5. Key findings
 
 All results come from single runs on synthetic messages with one model (`openai/gpt-oss-120b`, temperature 0.2). The model showed noticeable run-to-run variation, mainly in *whether* it chose to ask a question, so the numbers below are indicative rather than precise estimates.
 
@@ -299,7 +286,7 @@ On the 16 identical-text messages, unsafe outcomes were 7/8, 5/8 and 3/8 respect
 
 ---
 
-## 7. Limitations and future work
+## 6. Limitations and future work
 
 - **Synthetic benchmark.** The 40 messages were written to follow documented patterns, not sampled from real inboxes. The simulated person always answers truthfully, and "Not sure" when the card has no matching fact.
 - **Small user study.** Two student participants. The study is formative, not statistical.
@@ -315,7 +302,7 @@ On the 16 identical-text messages, unsafe outcomes were 7/8, 5/8 and 3/8 respect
 
 ---
 
-## 8. Repository structure
+## 7. Repository structure
 
 ```
 SecondLook-Human-AI-Scam-Checker/
@@ -349,8 +336,7 @@ SecondLook-Human-AI-Scam-Checker/
 ├── tests/                      Offline test suite (no API calls)
 ├── study/                      Consent form and facilitator script
 ├── docs/
-│   ├── development_log.md      Changes after proposal feedback and pilot runs
-│   └── screenshots/            Application screenshots
+│   └── development_log.md      Changes after proposal feedback and pilot runs
 └── runtime/results/            Archived evaluation outputs
     ├── 20261101-005051/        Final main benchmark (Ideas 1 and 2)
     ├── 20261031-190901/        Pilot run 1 (59 errors; see development log)
@@ -362,7 +348,7 @@ SecondLook-Human-AI-Scam-Checker/
 
 ---
 
-## 9. Reproducibility
+## 8. Reproducibility
 
 **Offline tests (no API key, no network):**
 ```bash
